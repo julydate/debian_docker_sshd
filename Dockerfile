@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:bullseye
 
 MAINTAINER Julydate <i@xhtml.love>
 
@@ -15,7 +15,6 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 ADD set_root_pw.sh /set_root_pw.sh
-ADD superupdate.sh /superupdate.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 EXPOSE 22
